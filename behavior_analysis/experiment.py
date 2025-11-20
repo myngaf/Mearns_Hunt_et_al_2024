@@ -4,7 +4,7 @@ import pandas as pd
 from exptlib import Experiment, MetadataAttribute, CSVMetadata
 import cv2
 from exptlib.directory import Directory
-from zigzeg import align_peaks, find_runs
+from sigseg import align_peaks, find_runs
 from scipy.interpolate import CubicSpline
 
 from .io import TrackingInterface
@@ -14,11 +14,7 @@ from .kinematics import compute_tail_curvature, tail_angle_filter, find_bouts, i
 class PreyCaptureExperiment(Experiment):
 
     species_names = {
-        "l_attenuatus": "Lepidiolamprologus attenuatus",
-        "a_burtoni": "Astatotilapia burtoni",
-        "l_ocellatus": "Lamprologus ocellatus",
-        "n_multifasciatus": "Neolamprologus multifasciatus",
-        "o_latipes": "Oryzias latipes"
+        "d_rerio": "Danio rerio",
     }
 
     video_data = MetadataAttribute(CSVMetadata, "video_data.csv", write_kw=dict(index=False))
